@@ -404,15 +404,91 @@ buildpack.jenkins.io/classic-workloads              https://github.com/jenkins-x
 buildpack.jenkins.io/kubernetes-workloads           https://github.com/jenkins-x-buildpacks/jenkins-x-kubernetes.git   master
 ```
 
+```bash
+kubectl get ingress,endpoints
+```
+
+Output:
+
+```text
+NAME                                 HOSTS                           ADDRESS                                                                            PORTS   AGE
+ingress.extensions/chartmuseum       chartmuseum.jx.mylabs.dev       a98340ce3ef3711e999d1023c74cd13b-171131646c51ed52.elb.eu-central-1.amazonaws.com   80      93s
+ingress.extensions/deck              deck.jx.mylabs.dev              a98340ce3ef3711e999d1023c74cd13b-171131646c51ed52.elb.eu-central-1.amazonaws.com   80      92s
+ingress.extensions/docker-registry   docker-registry.jx.mylabs.dev   a98340ce3ef3711e999d1023c74cd13b-171131646c51ed52.elb.eu-central-1.amazonaws.com   80      93s
+ingress.extensions/hook              hook.jx.mylabs.dev              a98340ce3ef3711e999d1023c74cd13b-171131646c51ed52.elb.eu-central-1.amazonaws.com   80      93s
+ingress.extensions/nexus             nexus.jx.mylabs.dev             a98340ce3ef3711e999d1023c74cd13b-171131646c51ed52.elb.eu-central-1.amazonaws.com   80      92s
+ingress.extensions/tide              tide.jx.mylabs.dev              a98340ce3ef3711e999d1023c74cd13b-171131646c51ed52.elb.eu-central-1.amazonaws.com   80      93s
+
+NAME                                    ENDPOINTS                         AGE
+endpoints/deck                          100.96.1.6:8080,100.96.2.5:8080   2m47s
+endpoints/heapster                      100.96.1.14:8082                  2m39s
+endpoints/hook                          100.96.1.7:8888,100.96.2.8:8888   2m47s
+endpoints/jenkins-x-chartmuseum         100.96.2.14:8080                  2m41s
+endpoints/jenkins-x-docker-registry     100.96.1.13:5000                  2m40s
+endpoints/nexus                         100.96.2.13:8081                  2m39s
+endpoints/pipelinerunner                100.96.1.9:8080                   2m46s
+endpoints/tekton-pipelines-controller   100.96.1.4:9090                   2m53s
+endpoints/tekton-pipelines-webhook      100.96.1.5:8443                   2m53s
+endpoints/tide                          100.96.2.10:8888                  2m45s
+```
+
 You can also use `jx get environments` to get the environments:
 
 ```bash
 kubectl get environments -n jx
 ```
 
+Output:
+
 ```text
 NAME         NAMESPACE       KIND          PROMOTION   ORDER   GIT URL                                                         GIT BRANCH
 dev          jx              Development   Never
 production   jx-production   Permanent     Manual      200     https://github.com/ruzickap/environment-mylabs-production.git
 staging      jx-staging      Permanent     Auto        100     https://github.com/ruzickap/environment-mylabs-staging.git
+```
+
+Or you can use the `jx` command to see the environments:
+
+```bash
+jx get env
+```
+
+Output:
+
+```text
+NAME       LABEL       KIND        PROMOTE NAMESPACE     ORDER CLUSTER SOURCE                                                        REF PR
+dev        Development Development Never   jx            0
+staging    Staging     Permanent   Auto    jx-staging    100           https://github.com/ruzickap/environment-mylabs-staging.git
+production Production  Permanent   Manual  jx-production 200           https://github.com/ruzickap/environment-mylabs-production.git
+```
+
+Install Tekton Dashboard to see the details of the builds:
+
+```bash
+curl -sL https://github.com/tektoncd/dashboard/releases/download/v0.2.0/release.yaml | sed "s/namespace: tekton-pipelines/namespace: jx/" | kubectl apply -f -
+```
+
+Create Ingress for Tekton Dashboard:
+
+```bash
+cat << EOF | kubectl apply -f -
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: tekton-dashboard
+  namespace: jx
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/auth-secret: jx-basic-auth
+    nginx.ingress.kubernetes.io/auth-type: basic
+spec:
+  rules:
+    - host: tekton-dashboard.jx.mylabs.dev
+      http:
+        paths:
+          - backend:
+              serviceName: tekton-dashboard
+              servicePort: 9097
+            path: /
+EOF
 ```

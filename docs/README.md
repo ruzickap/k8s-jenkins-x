@@ -1,4 +1,4 @@
-# Kubernetes + Jenkins X + Sockshop
+# Kubernetes + Jenkins X + Sock Shop
 
 [![Build Status](https://travis-ci.com/ruzickap/k8s-jenkins-x.svg?branch=master)](https://travis-ci.com/ruzickap/k8s-jenkins-x)
 
@@ -17,4 +17,4 @@
 
 ## Content
 
-* [Part 01 - Install JenkinsX to AWS](part-01/README.md)
+* [Part 01 - Install Jenkins X to AWS](part-01/README.md)

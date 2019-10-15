@@ -45,7 +45,7 @@ DEMO_PROMPT="${GREEN}➜ ${CYAN}$ "
 
 [ ! -d .git ] && git clone --quiet https://github.com/ruzickap/k8s-jenkins-x && cd k8s-jenkins-x
 
-sed docs/part-01/README.md \
+sed docs/part-0{1..2}/README.md \
   -e '/^## Configure AWS/,/^## Install Jenkins X/d' \
 | \
 sed -n '/^```bash$/,/^```$/p;/^-----$/p' \

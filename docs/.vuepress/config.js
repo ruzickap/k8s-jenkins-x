@@ -1,6 +1,6 @@
 module.exports = {
-  title: "Kubernetes + Jenkins X + Sockshop",
-  description: "Kubernetes + Jenkins X + Sockshop",
+  title: "Kubernetes + Jenkins X + Sock Shop",
+  description: "Kubernetes + Jenkins X + Sock Shop",
   base: '/k8s-jenkins-x/',
   head: [
     ['link', { rel: "icon", href: "https://kubernetes.io/images/favicon.png" }]

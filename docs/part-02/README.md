@@ -513,7 +513,7 @@ NAME      URL
 front-end http://front-end.jx-production.mylabs.dev
 ```
 
-The promotion to producation was done succesfully:
+The promotion to production was done successfully:
 
 ```bash
 jx get activity

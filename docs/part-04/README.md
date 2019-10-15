@@ -5,7 +5,7 @@
 
 Uninstall Jenkins X:
 
-```
+```bash
 jx uninstall --context="${USER}-jx-k8s.mylabs.dev"
 ```
 

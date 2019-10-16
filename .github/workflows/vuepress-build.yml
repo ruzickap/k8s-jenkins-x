@@ -1,4 +1,4 @@
-name: "VuePress build"
+name: "vuepress-build"
 
 on:
   push:
@@ -24,7 +24,7 @@ jobs:
     - name: "Install Node.js 12"
       uses: actions/setup-node@v1
       with:
-        version: 12.x
+        node-version: 12.x
 
     - name: "Install markdownlint-cli"
       run: npm install -g markdownlint-cli
@@ -46,7 +46,7 @@ jobs:
     - name: "Install Node.js 12"
       uses: actions/setup-node@v1
       with:
-        version: 12.x
+        node-version: 12.x
 
     - name: "Install markdown-spellcheck"
       run: npm install -g markdown-spellcheck
@@ -67,7 +67,7 @@ jobs:
     - name: "Install Node.js 12"
       uses: actions/setup-node@v1
       with:
-        version: 12.x
+        node-version: 12.x
 
     - name: "Install VuePress and build the document"
       run: |
@@ -76,6 +76,7 @@ jobs:
         cp LICENSE docs/.vuepress/dist
         ln -s docs/.vuepress/dist ${GITHUB_REPOSITORY##*/}
         sed -e "s@(part-@(https://github.com/${GITHUB_REPOSITORY}/tree/master/docs/part-@" -e 's@.\/.vuepress\/public\/@./@' docs/README.md > docs/.vuepress/dist/README.md
+        touch docs/.vuepress/dist/.nojekyll
 
     - name: "Check links"
       run: |

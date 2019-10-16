@@ -3,12 +3,6 @@
 ![Clean-up](https://raw.githubusercontent.com/aws-samples/eks-workshop/65b766c494a5b4f5420b2912d8373c4957163541/static/images/cleanup.svg?sanitize=true
 "Clean-up")
 
-Uninstall Jenkins X:
-
-```bash
-jx uninstall --context="${USER}-jx-k8s.mylabs.dev"
-```
-
 Remove `front-end` repository in GitHub:
 
 ```bash

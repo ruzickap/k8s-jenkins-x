@@ -20,3 +20,10 @@
 * [Part 01 - Install Jenkins X to AWS](part-01/README.md)
 * [Part 02 - Sock Shop](part-02/README.md)
 * [Part 04 - Cleanup](part-04/README.md)
+
+## Links
+
+* Video:
+
+  * [Cloud Native CI/CD with Jenkins X and Knative Pipelines](https://youtu.be/sUkvpzr9du8)
+  * [Jenkins X A Hands on Demonstration - Webinar Series, Session 1](https://youtu.be/PqSfYuKEkVU)

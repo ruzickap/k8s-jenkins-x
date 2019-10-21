@@ -2,6 +2,7 @@ awscli
 Cleanup
 jx
 k8s
+Knative
 kops
 kubectl
 Kubernetes

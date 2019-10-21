@@ -45,7 +45,7 @@ DEMO_PROMPT="${GREEN}➜ ${CYAN}$ "
 
 [ ! -d .git ] && git clone --quiet https://github.com/ruzickap/k8s-jenkins-x && cd k8s-jenkins-x
 
-sed -n '/^```bash$/,/^```$/p;/^-----$/p' docs/part-02/README.md \
+sed -n '/^```bash$/,/^```$/p;/^-----$/p' docs/part-0{2..3}/README.md \
 | \
 sed \
   -e 's/^-----$/\
@@ -76,7 +76,7 @@ if [ "$#" -eq 0 ]; then
   read A
 
   # hide the evidence
-  clear
+  # clear
   source README.sh
 else
   cat README.sh

@@ -19,6 +19,7 @@
 
 * [Part 01 - Install Jenkins X to AWS](part-01/README.md)
 * [Part 02 - Sock Shop](part-02/README.md)
+* [Part 03 - Jenkins X operations](part-03/README.md)
 * [Part 04 - Cleanup](part-04/README.md)
 
 ## Links

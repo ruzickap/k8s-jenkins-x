@@ -147,6 +147,7 @@ Import application into Jenkins X:
 
 ```bash
 jx import --git-username=ruzickap --name="front-end" --url="https://github.com/ruzickap/front-end"
+cd ..
 ```
 
 Output:
@@ -552,7 +553,7 @@ Watch pipeline activity via:
 
 ```bash
 jx get activity -f front-end
-sleep 10
+sleep 60
 ```
 
 Output:
@@ -603,7 +604,7 @@ carts                1/1                                                    1/1
 carts-db             1/1                                                    1/1
 catalogue            1/1                                                    1/1
 catalogue-db         1/1                                                    1/1
-front-end    0.3.13  1/1  http://front-end.jx-staging.mylabs.dev 0.3.13     1/1  http://front-end.jx-production.mylabs.dev
+front-end    0.3.13  1/1  http://front-end.jx-staging.mylabs.dev 0.3.13     1/1
 orders               1/1                                                    1/1
 orders-db            1/1                                                    1/1
 payment              1/1                                                    1/1
@@ -652,6 +653,7 @@ The promotion to production should be completed soon:
 
 ```bash
 jx get activity
+sleep 60
 ```
 
 Output:

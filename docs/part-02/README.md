@@ -1,5 +1,10 @@
 # Sock Shop
 
+Sock Shop Architecture:
+
+![Sock Shop Architecture](https://raw.githubusercontent.com/microservices-demo/microservices-demo.github.io/40d8170161d2f81cc6524f8aa137c8e9f9131ecd/assets/Architecture.png
+"Sock Shop Architecture")
+
 Open the Jenkins X installed services:
 
 ```bash

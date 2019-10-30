@@ -58,12 +58,9 @@ pe '"'"'/' \
   -e 's/^```$/'"'"'/' \
 > README.sh
 
+export MY_DOMAIN=${MY_DOMAIN:-mylabs.dev}
 
 if [ "$#" -eq 0 ]; then
-  ### Please run these commands before running the script
-
-  export MY_DOMAIN=${MY_DOMAIN:-mylabs.dev}
-  # ./run-k8s-part2.sh
 
   if [ -z ${GITHUB_API_TOKEN} ] || [ -z ${AWS_ACCESS_KEY_ID} ] || [ -z ${AWS_SECRET_ACCESS_KEY} ]; then
     echo -e "\n*** One of the mandatory variables is not set !!\n";
@@ -76,7 +73,7 @@ if [ "$#" -eq 0 ]; then
   read A
 
   # hide the evidence
-  # clear
+  clear
   source README.sh
 else
   cat README.sh

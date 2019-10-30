@@ -61,10 +61,20 @@ Output:
 https://github.com/ruzickap/front-end/pull/1
 ```
 
+Check how the PR looks like: [https://github.com/ruzickap/front-end/pull/1](https://github.com/ruzickap/front-end/pull/1)
+
 Look at the build logs for this PR:
 
 ```bash
 jx get build logs --wait=true ruzickap/front-end/pr-1
+```
+
+Output:
+
+```text
+Build logs for ruzickap/front-end/pr-1 #1 serverless-jenkins
+...
+Preview application is now available at: http://front-end.jx-ruzickap-front-end-pr-1.mylabs.dev
 ```
 
 New `pipelinerun` were created:
@@ -149,6 +159,16 @@ This will trigger another build:
 
 ```bash
 jx get build logs --wait=true "ruzickap/front-end/master #2 release"
+sleep 10
+```
+
+Output:
+
+```text
+Build logs for ruzickap/front-end/master #2 release
+...
+Pull Request https://github.com/ruzickap/environment-mylabs-staging/pull/2 is merged at sha cfe0935b9f327923a37d3f46fd9433559e2b3144
+Pull Request merged but we are not waiting for the update pipeline to complete!
 ```
 
 Check if the staging was changed after successful merge [http://front-end.jx-staging.mylabs.dev](http://front-end.jx-staging.mylabs.dev)
@@ -165,3 +185,46 @@ Output:
 ```html
                             <h3><a href="#">We really love socks!</a></h3>
 ```
+
+You should see the change by opening [http://front-end.jx-staging.mylabs.dev](http://front-end.jx-staging.mylabs.dev).
+
+```bash
+jx promote front-end --build="2" --version 0.3.14 --env production --batch-mode=true
+```
+
+Output:
+
+```text
+WARNING: prow based install so skip waiting for the merge of Pull Requests to go green as currently there is an issue with gettingstatuses from the PR, see https://github.com/jenkins-x/jx/issues/2410
+Promoting app front-end version 0.3.14 to namespace jx-production
+Created Pull Request: https://github.com/ruzickap/environment-mylabs-production/pull/2
+WARNING: failed to parse git provider URL git@github.com:ruzickap/k8s-jenkins-x.git: parse git@github.com:ruzickap/k8s-jenkins-x.git: first path segment in URL cannot contain colon
+Pull Request https://github.com/ruzickap/environment-mylabs-production/pull/2 is merged at sha efbb7115c326151b691849561453d57f2e46f4b2
+Pull Request merged but we are not waiting for the update pipeline to complete!
+```
+
+The promotion to production should be completed soon:
+
+```bash
+jx get activity
+sleep 60
+```
+
+Output:
+
+```text
+...
+ruzickap/k8s-jenkins-x/master #1                                          Running Version: 0.3.13
+  Release                                                 13m18s     1m0s Succeeded
+  Promote: production                                     12m18s     1m7s Succeeded
+    PullRequest                                           12m18s     1m7s Succeeded  PullRequest: https://github.com/ruzickap/environment-mylabs-production/pull/1 Merge SHA: b84c82ec3faf8536409aca200c2067281ccdb745
+    Update                                                11m11s       0s Succeeded
+ruzickap/k8s-jenkins-x/master #2                                          Running Version: 0.3.14
+  Release                                                  2m27s     1m0s Succeeded
+  Promote: production                                      1m27s     1m7s Succeeded
+    PullRequest                                            1m27s     1m7s Succeeded  PullRequest: https://github.com/ruzickap/environment-mylabs-production/pull/2 Merge SHA: efbb7115c326151b691849561453d57f2e46f4b2
+    Update                                                   20s       0s Succeeded
+    Promoted                                                 20s       0s Succeeded  Application is at: http://front-end.jx-production.mylabs.dev
+```
+
+You should see the "production change" by opening [http://front-end.jx-production.mylabs.dev](http://front-end.jx-production.mylabs.dev).

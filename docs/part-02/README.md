@@ -5,10 +5,10 @@ Sock Shop Architecture:
 ![Sock Shop Architecture](https://raw.githubusercontent.com/microservices-demo/microservices-demo.github.io/40d8170161d2f81cc6524f8aa137c8e9f9131ecd/assets/Architecture.png
 "Sock Shop Architecture")
 
-Open the Jenkins X installed services:
+Open the Jenkins X Prow:
 
 ```bash
-firefox --private-window https://deck.jx.mylabs.dev &
+firefox https://deck.jx.mylabs.dev &
 ```
 
 Deploy the Sock Shop microservices to the `jx-production` and `jx-staging`.
@@ -150,6 +150,8 @@ remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
 To github.com:ruzickap/front-end.git
    b6604d9..b7f3b45  master -> master
 ```
+
+You can see the code in: [https://github.com/ruzickap/front-end](https://github.com/ruzickap/front-end)
 
 Import application into Jenkins X:
 
@@ -556,6 +558,8 @@ Pull Request https://github.com/ruzickap/environment-mylabs-staging/pull/1 is me
 Pull Request merged but we are not waiting for the update pipeline to complete!
 WARNING: Could not find the service URL in namespace jx-staging for names front-end, jx-front-end, jx-staging-front-end
 ```
+
+You should be able to see created container image in AWS ECR: [https://eu-central-1.console.aws.amazon.com/ecr/repositories?region=eu-central-1](https://eu-central-1.console.aws.amazon.com/ecr/repositories?region=eu-central-1)
 
 Watch pipeline activity via:
 

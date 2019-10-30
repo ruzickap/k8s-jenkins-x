@@ -4,6 +4,8 @@
 
 * GitHub repository: [https://github.com/ruzickap/k8s-jenkins-x](https://github.com/ruzickap/k8s-jenkins-x)
 * Web Pages: [https://ruzickap.github.io/k8s-jenkins-x](https://ruzickap.github.io/k8s-jenkins-x)
+* Asciinema: [https://asciinema.org/a/277936](https://asciinema.org/a/277936)
+* YouTube: [https://youtu.be/aDOZbGbEaHI](https://youtu.be/aDOZbGbEaHI)
 
 ## Requirements
 

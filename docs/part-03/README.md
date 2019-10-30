@@ -228,3 +228,7 @@ ruzickap/k8s-jenkins-x/master #2                                          Runnin
 ```
 
 You should see the "production change" by opening [http://front-end.jx-production.mylabs.dev](http://front-end.jx-production.mylabs.dev).
+
+Here is how the AWS ECR looks like at the end:
+
+![AWS ECR](./AWS_ECR.png "AWS ECR")

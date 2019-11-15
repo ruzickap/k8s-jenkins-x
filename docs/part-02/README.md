@@ -15,7 +15,7 @@ Deploy the Sock Shop microservices to the `jx-production` and `jx-staging`.
 Only the `front-end` microservice will be modified and handled by Jenkins X.
 The rest of microservices will be installed form default Sock Shop
 k8s manifests.
-Modifications can be seen here: [https://github.com/ruzickap/k8s-jenkins-x/blob/master/files/complete-demo.yaml#L202-L248](https://github.com/ruzickap/k8s-jenkins-x/blob/master/files/complete-demo.yaml#L202-L248)
+Modifications can be seen here: [https://github.com/ruzickap/k8s-jenkins-x/blob/master/files/complete-demo.yaml](https://github.com/ruzickap/k8s-jenkins-x/blob/master/files/complete-demo.yaml)
 
 ```bash
 sed "s/namespace: sock-shop/namespace: jx-production/" files/complete-demo.yaml | kubectl apply -f -

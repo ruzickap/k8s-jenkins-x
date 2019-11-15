@@ -11,7 +11,7 @@ on:
     - package-lock.json
 
 env:
-  EXCLUDE_WEB_PAGES: "(mylabs.dev)"
+  EXCLUDE_WEB_PAGES: "(mylabs.dev|github.com/ruzickap/environment-mylabs-|github.com/ruzickap/front-end)"
 
 jobs:
   markdown-lint-check:

@@ -15,6 +15,7 @@
 * [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
 * [kops](https://github.com/kubernetes/kops)
 * [hub](https://hub.github.com/)
+* [jx](https://github.com/jenkins-x/jx)
 * Kubernetes, Docker, Linux, AWS knowledge required
 
 ## Content

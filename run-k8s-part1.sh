@@ -36,7 +36,7 @@ DEMO_PROMPT="${GREEN}➜ ${CYAN}$ "
 
 ### Please run these commands before running the script
 
-# docker run -it --rm -e GITHUB_API_TOKEN="$GITHUB_API_TOKEN" -e AWS_ACCESS_KEY_ID="$AWS_ACCESS_KEY_ID" -e AWS_SECRET_ACCESS_KEY="$AWS_SECRET_ACCESS_KEY" -e SSH_AUTH_SOCK=$SSH_AUTH_SOCK -v $SSH_AUTH_SOCK:$SSH_AUTH_SOCK -v $HOME/.config/hub:/root/.config/hub:ro -v $PWD:/mnt ubuntu
+# docker run -it --rm -e GITHUB_TOKEN -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY -e SSH_AUTH_SOCK -v $SSH_AUTH_SOCK:$SSH_AUTH_SOCK -v $HOME/.config/hub:/root/.config/hub:ro -v $PWD:/mnt ubuntu
 # echo $(hostname -I) $(hostname) >> /etc/hosts
 # apt-get update -qq && apt-get install -qq -y curl git pv > /dev/null
 # cd /mnt

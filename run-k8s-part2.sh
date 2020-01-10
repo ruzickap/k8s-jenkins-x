@@ -36,7 +36,7 @@ DEMO_PROMPT="${GREEN}➜ ${CYAN}$ "
 
 ### Please run these commands before running the script
 
-# docker run -it --rm -e USER="$USER" -e GITHUB_API_TOKEN="$GITHUB_API_TOKEN" -e AWS_ACCESS_KEY_ID="$AWS_ACCESS_KEY_ID" -e AWS_SECRET_ACCESS_KEY="$AWS_SECRET_ACCESS_KEY" -v $HOME/.config/hub:/root/.config/hub:ro -v $PWD:/mnt ubuntu
+# docker run -it --rm -e USER -e GITHUB_TOKEN -e AWS_ACCESS_KEY_ID -e AWS_SECRET_ACCESS_KEY -v $HOME/.config/hub:/root/.config/hub:ro -v $PWD:/mnt ubuntu
 # echo $(hostname -I) $(hostname) >> /etc/hosts
 # apt-get update -qq && apt-get install -qq -y curl git pv > /dev/null
 # cd /mnt
@@ -62,7 +62,7 @@ export MY_DOMAIN=${MY_DOMAIN:-mylabs.dev}
 
 if [ "$#" -eq 0 ]; then
 
-  if [ -z ${GITHUB_API_TOKEN} ] || [ -z ${AWS_ACCESS_KEY_ID} ] || [ -z ${AWS_SECRET_ACCESS_KEY} ]; then
+  if [ -z ${GITHUB_TOKEN} ] || [ -z ${AWS_ACCESS_KEY_ID} ] || [ -z ${AWS_SECRET_ACCESS_KEY} ]; then
     echo -e "\n*** One of the mandatory variables is not set !!\n";
     exit 1
   fi

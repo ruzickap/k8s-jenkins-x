@@ -110,7 +110,7 @@ jx create cluster aws \
   --default-environment-prefix="mylabs" \
   --domain="mylabs.dev" \
   --environment-git-owner="ruzickap" \
-  --git-api-token="$GITHUB_API_TOKEN" \
+  --git-api-token="$GITHUB_TOKEN" \
   --git-provider-url="https://github.com" \
   --git-username="ruzickap" \
   --kaniko=true \

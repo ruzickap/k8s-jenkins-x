@@ -1,9 +1,9 @@
 module.exports = {
-  title: "Kubernetes + Jenkins X + Sock Shop",
-  description: "Kubernetes + Jenkins X + Sock Shop",
+  title: 'Kubernetes + Jenkins X + Sock Shop',
+  description: 'Kubernetes + Jenkins X + Sock Shop',
   base: '/k8s-jenkins-x/',
   head: [
-    ['link', { rel: "icon", href: "https://kubernetes.io/images/favicon.png" }]
+    ['link', { rel: 'icon', href: 'https://kubernetes.io/images/favicon.png' }]
   ],
   themeConfig: {
     displayAllHeaders: true,
@@ -17,7 +17,7 @@ module.exports = {
       {
         text: 'Links',
         items: [
-          { text: 'Jenkins X', link: 'https://jenkins-x.io/' },
+          { text: 'Jenkins X', link: 'https://jenkins-x.io/' }
         ]
       }
     ],
@@ -26,7 +26,7 @@ module.exports = {
       '/part-01/',
       '/part-02/',
       '/part-03/',
-      '/part-04/',
+      '/part-04/'
     ]
   },
   plugins: [

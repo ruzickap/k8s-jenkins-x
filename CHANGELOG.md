@@ -1,5 +1,19 @@
 # Changelog
 
+## [v0.1.0](https://github.com/ruzickap/k8s-jenkins-x/compare/v0.0.1...v0.1.0) (2020-09-17)
+
+- Add GITHUB_TOKEN to super-linter [`#53`](https://github.com/ruzickap/k8s-jenkins-x/pull/53)
+- Replace markdown linter [`#41`](https://github.com/ruzickap/k8s-jenkins-x/pull/41)
+- Add super-linter + fix related issues [`#36`](https://github.com/ruzickap/k8s-jenkins-x/pull/36)
+- Fix GH variables to pass the tests [`#35`](https://github.com/ruzickap/k8s-jenkins-x/pull/35)
+- Move to GitHub's Dependabot (version 2) [`#28`](https://github.com/ruzickap/k8s-jenkins-x/pull/28)
+- Use shell-linter in latest version [`#23`](https://github.com/ruzickap/k8s-jenkins-x/pull/23)
+- Bump @vuepress/plugin-back-to-top from 1.4.1 to 1.5.0 [`#19`](https://github.com/ruzickap/k8s-jenkins-x/pull/19)
+- Bump @vuepress/plugin-medium-zoom from 1.4.1 to 1.5.0 [`#20`](https://github.com/ruzickap/k8s-jenkins-x/pull/20)
+- Bump vuepress from 1.4.1 to 1.5.0 [`#18`](https://github.com/ruzickap/k8s-jenkins-x/pull/18)
+- Ignore CHANGELOG.md when doing markdown checks [`#21`](https://github.com/ruzickap/k8s-jenkins-x/pull/21)
+- CHANGELOG file update [`#17`](https://github.com/ruzickap/k8s-jenkins-x/pull/17)
+
 ## v0.0.1 (2020-05-11)
 
 - Add .pre-commit-config.yaml and .release-it.yml to .gitignore [`c2926a3`](https://github.com/ruzickap/k8s-jenkins-x/commit/c2926a3e9bf1559830fc65d8733ee17fc9efa559)

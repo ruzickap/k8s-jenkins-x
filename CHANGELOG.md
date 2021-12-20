@@ -1,5 +1,17 @@
 # Changelog
 
+## [v0.1.1](https://github.com/ruzickap/k8s-jenkins-x/compare/v0.1.0...v0.1.1) (2021-12-20)
+
+- Improve GH Action files [`#82`](https://github.com/ruzickap/k8s-jenkins-x/pull/82)
+- Update npm [`#81`](https://github.com/ruzickap/k8s-jenkins-x/pull/81)
+- Fix linter issues [`#80`](https://github.com/ruzickap/k8s-jenkins-x/pull/80)
+- Upgrade GH Actions versions [`#79`](https://github.com/ruzickap/k8s-jenkins-x/pull/79)
+- npm update [`#78`](https://github.com/ruzickap/k8s-jenkins-x/pull/78)
+- Disable jscpd [`#74`](https://github.com/ruzickap/k8s-jenkins-x/pull/74)
+- Upgrade action-my-broken-link-checker [`#66`](https://github.com/ruzickap/k8s-jenkins-x/pull/66)
+- Fix My Broken Link Checker parameter [`#56`](https://github.com/ruzickap/k8s-jenkins-x/pull/56)
+- Update package-lock.json [`#55`](https://github.com/ruzickap/k8s-jenkins-x/pull/55)
+
 ## [v0.1.0](https://github.com/ruzickap/k8s-jenkins-x/compare/v0.0.1...v0.1.0) (2020-09-17)
 
 - Add GITHUB_TOKEN to super-linter [`#53`](https://github.com/ruzickap/k8s-jenkins-x/pull/53)
@@ -12,7 +24,6 @@
 - Bump @vuepress/plugin-medium-zoom from 1.4.1 to 1.5.0 [`#20`](https://github.com/ruzickap/k8s-jenkins-x/pull/20)
 - Bump vuepress from 1.4.1 to 1.5.0 [`#18`](https://github.com/ruzickap/k8s-jenkins-x/pull/18)
 - Ignore CHANGELOG.md when doing markdown checks [`#21`](https://github.com/ruzickap/k8s-jenkins-x/pull/21)
-- CHANGELOG file update [`#17`](https://github.com/ruzickap/k8s-jenkins-x/pull/17)
 
 ## v0.0.1 (2020-05-11)
 

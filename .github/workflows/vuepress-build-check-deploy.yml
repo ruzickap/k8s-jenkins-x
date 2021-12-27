@@ -38,10 +38,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Install Node.js 12
+      - name: Install Node.js 16
         uses: actions/setup-node@v2
         with:
-          node-version: 12.x
+          node-version: 16.x
 
       - name: Install markdown-spellcheck
         run: npm install -g markdown-spellcheck
@@ -76,7 +76,6 @@ jobs:
           url: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
           pages_path: .
           cmd_params: '--buffer-size=8192 --max-connections=10 --color=always --skip-tls-verification --exclude="(mylabs.dev|https://github.com/ruzickap/environment-mylabs-|https://github.com/ruzickap/front-end)"'
-          debug: true
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3

@@ -1,6 +1,6 @@
 # Kubernetes + Jenkins X + Sock Shop
 
-[![Build Status](https://github.com/ruzickap/k8s-jenkins-x/workflows/vuepress-build/badge.svg)](https://github.com/ruzickap/k8s-jenkins-x)
+[![Build Status](https://github.com/ruzickap/k8s-jenkins-x/actions/workflows/vuepress-build-check-deploy.yml/badge.svg)](https://github.com/ruzickap/k8s-jenkins-x)
 
 * GitHub repository: [https://github.com/ruzickap/k8s-jenkins-x](https://github.com/ruzickap/k8s-jenkins-x)
 * Web Pages: [https://ruzickap.github.io/k8s-jenkins-x](https://ruzickap.github.io/k8s-jenkins-x)

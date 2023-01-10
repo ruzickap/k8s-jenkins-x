@@ -313,8 +313,8 @@ in GitHub:
 
 * [https://github.com/ruzickap/environment-mylabs-staging](https://github.com/ruzickap/environment-mylabs-staging)
 
-![GitHub https://github.com/ruzickap/environment-mylabs-production repository](./jenkins-x-github.png
-"GitHub https://github.com/ruzickap/environment-mylabs-production repository")
+![GitHub repository](./jenkins-x-github.png
+"GitHub repository")
 
 Few commands showing the Jenkins X installation inside Kubernetes:
 

@@ -1,0 +1,3 @@
+quiet: true
+skip-path:
+  - files/complete-demo.yaml

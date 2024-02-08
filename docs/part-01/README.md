@@ -106,7 +106,7 @@ Create Kubernetes cluster in Amazon and install Jenkins X there:
 ```bash
 jx create cluster aws \
   --cluster-name=${USER}-jx-k8s.mylabs.dev \
-  --default-admin-password="admin123" \
+  --default-admin-password="********" \
   --default-environment-prefix="mylabs" \
   --domain="mylabs.dev" \
   --environment-git-owner="ruzickap" \

@@ -47,16 +47,13 @@ export DEMO_PROMPT="${GREEN}➜ ${CYAN}$ "
 [ ! -d .git ] && git clone --quiet https://github.com/ruzickap/k8s-jenkins-x && cd k8s-jenkins-x
 
 sed docs/part-01/README.md \
-  -e '/^## Configure AWS/,/^## Install Jenkins X/d' \
-| \
-sed -n "/^\`\`\`bash.*/,/^\`\`\`$/p;/^-----$/p" \
-| \
-sed \
-  -e 's/^-----$/\np  ""\np  "################################################################################################### Press <ENTER> to continue"\nwait\n/' \
-  -e 's/^```bash.*/\npe '"'"'/' \
-  -e 's/^```$/'"'"'/' \
-> README.sh
-
+  -e '/^## Configure AWS/,/^## Install Jenkins X/d' |
+  sed -n "/^\`\`\`bash.*/,/^\`\`\`$/p;/^-----$/p" |
+  sed \
+    -e 's/^-----$/\np  ""\np  "################################################################################################### Press <ENTER> to continue"\nwait\n/' \
+    -e 's/^```bash.*/\npe '"'"'/' \
+    -e 's/^```$/'"'"'/' \
+    > README.sh
 
 if [ "$#" -eq 0 ]; then
   # shellcheck disable=SC1091

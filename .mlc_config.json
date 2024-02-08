@@ -1,0 +1,16 @@
+{
+  "ignorePatterns": [
+    {
+      "pattern": "(http|https)://.*mylabs.dev"
+    },
+    {
+      "pattern": "https://github.com/ruzickap/front"
+    },
+    {
+      "pattern": "https://github.com/ruzickap/environment"
+    },
+    {
+      "pattern": "(http|https)://localhost"
+    }
+  ]
+}

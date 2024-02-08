@@ -46,20 +46,19 @@ export DEMO_PROMPT="${GREEN}➜ ${CYAN}$ "
 
 [ ! -d .git ] && git clone --quiet https://github.com/ruzickap/k8s-jenkins-x && cd k8s-jenkins-x
 
-sed -n "/^\`\`\`bash.*/,/^\`\`\`$/p;/^-----$/p" docs/part-0{2..3}/README.md \
-| \
-sed \
-  -e 's/^-----$/\np  ""\np  "################################################################################################### Press <ENTER> to continue"\nwait\n/' \
-  -e 's/^```bash.*/\npe '"'"'/' \
-  -e 's/^```$/'"'"'/' \
-> README.sh
+sed -n "/^\`\`\`bash.*/,/^\`\`\`$/p;/^-----$/p" docs/part-0{2..3}/README.md |
+  sed \
+    -e 's/^-----$/\np  ""\np  "################################################################################################### Press <ENTER> to continue"\nwait\n/' \
+    -e 's/^```bash.*/\npe '"'"'/' \
+    -e 's/^```$/'"'"'/' \
+    > README.sh
 
 export MY_DOMAIN=${MY_DOMAIN:-mylabs.dev}
 
 if [ "$#" -eq 0 ]; then
 
   if [ -z "${GITHUB_TOKEN}" ] || [ -z "${AWS_ACCESS_KEY_ID}" ] || [ -z "${AWS_SECRET_ACCESS_KEY}" ]; then
-    echo -e "\n*** One of the mandatory variables is not set !!\n";
+    echo -e "\n*** One of the mandatory variables is not set !!\n"
     exit 1
   fi
 

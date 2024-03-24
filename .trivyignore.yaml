@@ -11,8 +11,8 @@ vulnerabilities:
   - id: CVE-2022-24772
   # │ nth-check    │ CVE-2021-3803  │ HIGH     │ fixed    │ 1.0.2             │ 2.0.1         │ inefficient regular expression complexity                   │
   - id: CVE-2021-3803
-  # | ip           │ CVE-2023-42282 │ HIGH     │ affected │ 1.1.8             │               │ An issue in NPM IP Package v.1.1.8 and before allows an     │
-  - id: CVE-2023-42282
+  # │ webpack-dev-middleware │ CVE-2024-29180 │ HIGH     │ fixed  │ 3.7.3             │ 7.1.0, 6.1.2, 5.3.4 │ webpack-dev-middleware: lack of URL validation may lead to  │
+  - id: CVE-2024-29180
 
 misconfigurations:
   # Prevent binding to privileged ports

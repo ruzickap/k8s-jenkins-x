@@ -1,5 +1,24 @@
 # Changelog
 
+## [0.2.0](https://github.com/ruzickap/k8s-jenkins-x/compare/v0.1.1...v0.2.0) (2024-07-02)
+
+
+### Features
+
+* **gh:** add default GitHub repo files ([#135](https://github.com/ruzickap/k8s-jenkins-x/issues/135)) ([02f0b28](https://github.com/ruzickap/k8s-jenkins-x/commit/02f0b280ad06f6db0af7504db7d9bbacd006a3dd))
+* **gh:** add default GitHub repo files ([#137](https://github.com/ruzickap/k8s-jenkins-x/issues/137)) ([229fed8](https://github.com/ruzickap/k8s-jenkins-x/commit/229fed8460ee91582023fc676d5629c5edbae366))
+* **gh:** add default GitHub repo files ([#138](https://github.com/ruzickap/k8s-jenkins-x/issues/138)) ([25fcd70](https://github.com/ruzickap/k8s-jenkins-x/commit/25fcd70116931326a7e13afcca63094963518ab2))
+* **gh:** add default GitHub repo files ([#142](https://github.com/ruzickap/k8s-jenkins-x/issues/142)) ([a65dde7](https://github.com/ruzickap/k8s-jenkins-x/commit/a65dde7e45216b724165ad6cff36de948090f74b))
+* **gha:** unify GHA - renovate, megalinter, markdown, and others ([#133](https://github.com/ruzickap/k8s-jenkins-x/issues/133)) ([c55396a](https://github.com/ruzickap/k8s-jenkins-x/commit/c55396a26c8bfc3439c427f03959e29c8012f70f))
+* **gha:** update gha + add ignore-unfixed to trivy ([#151](https://github.com/ruzickap/k8s-jenkins-x/issues/151)) ([face0cd](https://github.com/ruzickap/k8s-jenkins-x/commit/face0cdaf0c974e672522d41748dd3be7738481a))
+
+
+### Bug Fixes
+
+* add CVE-2024-4068 to .trivyignore.yaml ([#159](https://github.com/ruzickap/k8s-jenkins-x/issues/159)) ([4d5cc4b](https://github.com/ruzickap/k8s-jenkins-x/commit/4d5cc4b9835cb724b71987c3c76acda7b4d9b19a))
+* **doc:** fix k8s logo url ([#152](https://github.com/ruzickap/k8s-jenkins-x/issues/152)) ([34c29ab](https://github.com/ruzickap/k8s-jenkins-x/commit/34c29ab857895cf8c0c0cc026f0e54f5c8fde5b7))
+* **url:** exclude package-lock.json from URL checks ([#156](https://github.com/ruzickap/k8s-jenkins-x/issues/156)) ([d55ae9b](https://github.com/ruzickap/k8s-jenkins-x/commit/d55ae9b9e5a91838e3ef49783c0fc2127ed9d6e8))
+
 ## [v0.1.1](https://github.com/ruzickap/k8s-jenkins-x/compare/v0.1.0...v0.1.1) (2021-12-20)
 
 - Improve GH Action files [`#82`](https://github.com/ruzickap/k8s-jenkins-x/pull/82)

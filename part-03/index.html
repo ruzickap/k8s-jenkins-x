@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Jenkins X operations | Kubernetes + Jenkins X + Sock Shop</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    <link rel="icon" href="https://raw.githubusercontent.com/kubernetes/kubernetes/d9a58a39b69a0eaec5797e0f7a0f9472b4829ab0/logo/logo.svg">
+    <meta name="description" content="Kubernetes + Jenkins X + Sock Shop">
+    
+    <link rel="preload" href="/k8s-jenkins-x/assets/css/0.styles.12f88e6a.css" as="style"><link rel="preload" href="/k8s-jenkins-x/assets/js/app.aeee065c.js" as="script"><link rel="preload" href="/k8s-jenkins-x/assets/js/2.2d743907.js" as="script"><link rel="preload" href="/k8s-jenkins-x/assets/js/1.2b74d1c9.js" as="script"><link rel="preload" href="/k8s-jenkins-x/assets/js/22.d813267d.js" as="script"><link rel="prefetch" href="/k8s-jenkins-x/assets/js/10.41572552.js"><link rel="prefetch" href="/k8s-jenkins-x/assets/js/11.6724c971.js"><link rel="prefetch" href="/k8s-jenkins-x/assets/js/12.e73a605e.js"><link rel="prefetch" href="/k8s-jenkins-x/assets/js/13.5419e55e.js"><link rel="prefetch" href="/k8s-jenkins-x/assets/js/14.1ec19093.js"><link rel="prefetch" href="/k8s-jenkins-x/assets/js/15.d3972987.js"><link rel="prefetch" href="/k8s-jenkins-x/assets/js/16.cd753f26.js"><link rel="prefetch" href="/k8s-jenkins-x/assets/js/17.6cd3a12a.js"><link rel="prefetch" href="/k8s-jenkins-x/assets/js/18.8d7e6487.js"><link rel="prefetch" href="/k8s-jenkins-x/assets/js/19.7e5dfbaf.js"><link rel="prefetch" href="/k8s-jenkins-x/assets/js/20.489a61e7.js"><link rel="prefetch" href="/k8s-jenkins-x/assets/js/21.69d34ecf.js"><link rel="prefetch" href="/k8s-jenkins-x/assets/js/23.1d6373ca.js"><link rel="prefetch" href="/k8s-jenkins-x/assets/js/24.dc5ef6db.js"><link rel="prefetch" href="/k8s-jenkins-x/assets/js/25.7f3b0ffb.js"><link rel="prefetch" href="/k8s-jenkins-x/assets/js/26.284a3b2a.js"><link rel="prefetch" href="/k8s-jenkins-x/assets/js/3.2aeb53bb.js"><link rel="prefetch" href="/k8s-jenkins-x/assets/js/4.115744b7.js"><link rel="prefetch" href="/k8s-jenkins-x/assets/js/5.2516a03a.js"><link rel="prefetch" href="/k8s-jenkins-x/assets/js/6.25eed86c.js"><link rel="prefetch" href="/k8s-jenkins-x/assets/js/7.51093ad7.js"><link rel="prefetch" href="/k8s-jenkins-x/assets/js/vendors~docsearch.1bff6fe0.js">
+    <link rel="stylesheet" href="/k8s-jenkins-x/assets/css/0.styles.12f88e6a.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/k8s-jenkins-x/" class="home-link router-link-active"><img src="https://raw.githubusercontent.com/kubernetes/kubernetes/d9a58a39b69a0eaec5797e0f7a0f9472b4829ab0/logo/logo.svg" alt="Kubernetes + Jenkins X + Sock Shop" class="logo"> <span class="site-name can-hide">Kubernetes + Jenkins X + Sock Shop</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/k8s-jenkins-x/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Links" class="dropdown-title"><span class="title">Links</span> <span class="arrow down"></span></button> <button type="button" aria-label="Links" class="mobile-dropdown-title"><span class="title">Links</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://jenkins-x.io/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Jenkins X
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <a href="https://github.com/ruzickap/k8s-jenkins-x" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/k8s-jenkins-x/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Links" class="dropdown-title"><span class="title">Links</span> <span class="arrow down"></span></button> <button type="button" aria-label="Links" class="mobile-dropdown-title"><span class="title">Links</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://jenkins-x.io/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Jenkins X
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <a href="https://github.com/ruzickap/k8s-jenkins-x" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><a href="/k8s-jenkins-x/" aria-current="page" class="sidebar-link">Kubernetes + Jenkins X + Sock Shop</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/k8s-jenkins-x/#requirements" class="sidebar-link">Requirements</a></li><li class="sidebar-sub-header"><a href="/k8s-jenkins-x/#content" class="sidebar-link">Content</a></li><li class="sidebar-sub-header"><a href="/k8s-jenkins-x/#links" class="sidebar-link">Links</a></li></ul></li><li><a href="/k8s-jenkins-x/part-01/" class="sidebar-link">Jenkins X installation to AWS</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/k8s-jenkins-x/part-01/#prepare-the-local-working-environment" class="sidebar-link">Prepare the local working environment</a></li><li class="sidebar-sub-header"><a href="/k8s-jenkins-x/part-01/#configure-aws" class="sidebar-link">Configure AWS</a></li><li class="sidebar-sub-header"><a href="/k8s-jenkins-x/part-01/#install-jenkins-x" class="sidebar-link">Install Jenkins X</a></li></ul></li><li><a href="/k8s-jenkins-x/part-02/" class="sidebar-link">Sock Shop</a></li><li><a href="/k8s-jenkins-x/part-03/" aria-current="page" class="active sidebar-link">Jenkins X operations</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/k8s-jenkins-x/part-03/#pull-request" class="sidebar-link">Pull Request</a></li><li class="sidebar-sub-header"><a href="/k8s-jenkins-x/part-03/#merge" class="sidebar-link">Merge</a></li></ul></li><li><a href="/k8s-jenkins-x/part-04/" class="sidebar-link">Clean-up</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="jenkins-x-operations"><a href="#jenkins-x-operations" class="header-anchor">#</a> Jenkins X operations</h1> <p>Let's try to do some modifications in the <code>front-end</code> application and see how
+the Jenkins X will react on changes in git repository.</p> <h2 id="pull-request"><a href="#pull-request" class="header-anchor">#</a> Pull Request</h2> <p>Create Pull Request (PR):</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token builtin class-name">cd</span> tmp/front-end
+<span class="token function">git</span> checkout <span class="token parameter variable">-b</span> my_change
+<span class="token function">sed</span> <span class="token parameter variable">-i</span> <span class="token string">&quot;s/We love socks/We really love socks/&quot;</span> public/index.html
+<span class="token function">git</span> <span class="token function">diff</span>
+<span class="token function">git</span> commit <span class="token parameter variable">-s</span> <span class="token parameter variable">-a</span> <span class="token parameter variable">-m</span> <span class="token string">&quot;String changed&quot;</span>
+<span class="token function">git</span> push origin my_change
+</code></pre></div><p>Output:</p> <div class="language-text extra-class"><pre class="language-text"><code>Switched to a new branch 'my_change'
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+modified: public/index.html
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+@ public/index.html:86 @ _________________________________________________________ --&gt;
+                            &amp;lt;div class=&quot;icon&quot;&gt;&amp;lt;i class=&quot;fa fa-heart&quot;&gt;&amp;lt;/i&gt;
+                            &amp;lt;/div&gt;
+
+                            &amp;lt;h3&gt;&amp;lt;a href=&quot;#&quot;&gt;We love socks!&amp;lt;/a&gt;&amp;lt;/h3&gt;
+                            &amp;lt;h3&gt;&amp;lt;a href=&quot;#&quot;&gt;We really love socks!&amp;lt;/a&gt;&amp;lt;/h3&gt;
+                            &amp;lt;p&gt;Fun fact: Socks were invented by woolly mammoths
+                                to keep warm. They died out because stupid
+                                humans had to cut their legs off to get their
+[my_change c5ce0d8] String changed
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 383 bytes | 383.00 KiB/s, done.
+Total 4 (delta 3), reused 0 (delta 0)
+remote: Resolving deltas: 100% (3/3), completed with 3 local objects.
+remote:
+remote: Create a pull request for 'my_change' on GitHub by visiting:
+remote:      https://github.com/ruzickap/front-end/pull/new/my_change
+remote:
+To https://github.com/ruzickap/front-end.git
+ * [new branch]      my_change -&gt; my_change
+</code></pre></div><p>Create PR to the <code>fron-end</code> master</p> <div class="language-bash extra-class"><pre class="language-bash"><code>hub pull-request <span class="token parameter variable">-m</span> <span class="token string">&quot;My test PR&quot;</span> <span class="token parameter variable">-b</span> master
+</code></pre></div><p>Output:</p> <div class="language-text extra-class"><pre class="language-text"><code>https://github.com/ruzickap/front-end/pull/1
+</code></pre></div><p>Check how the PR looks like: <a href="https://github.com/ruzickap/front-end/pull/1" target="_blank" rel="noopener noreferrer">https://github.com/ruzickap/front-end/pull/1<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p>Look at the build logs for this PR:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>jx get build logs <span class="token parameter variable">--wait</span><span class="token operator">=</span>true ruzickap/front-end/pr-1
+</code></pre></div><p>Output:</p> <div class="language-text extra-class"><pre class="language-text"><code>Build logs for ruzickap/front-end/pr-1 #1 serverless-jenkins
+...
+Preview application is now available at: http://front-end.jx-ruzickap-front-end-pr-1.mylabs.dev
+</code></pre></div><p>New <code>pipelinerun</code> were created:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>kubectl get pipelinerun <span class="token operator">|</span> <span class="token function">grep</span> front-end-pr
+</code></pre></div><p>Output:</p> <div class="language-text extra-class"><pre class="language-text"><code>meta-ruzickap-front-end-pr-1-se-1         43m
+ruzickap-front-end-pr-1-serverl-1         43m
+</code></pre></div><p>Jenkins X created special namespace for this temporary &quot;front-end&quot; inside PR:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>kubectl get all <span class="token parameter variable">--namespace</span> jx-ruzickap-front-end-pr-1
+</code></pre></div><p>Output:</p> <div class="language-text extra-class"><pre class="language-text"><code>NAME                                   READY   STATUS    RESTARTS   AGE
+pod/preview-preview-774bb76d75-xqwj7   1/1     Running   0          42m
+
+NAME                TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)   AGE
+service/front-end   ClusterIP   100.69.62.155   &amp;lt;none&gt;        80/TCP    42m
+
+NAME                              READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/preview-preview   1/1     1            1           42m
+
+NAME                                         DESIRED   CURRENT   READY   AGE
+replicaset.apps/preview-preview-774bb76d75   1         1         1       42m
+</code></pre></div><p>Check the link in the PR web page <a href="https://front-end.jx-ruzickap-front-end-pr-1.mylabs.dev/" target="_blank" rel="noopener noreferrer">https://front-end.jx-ruzickap-front-end-pr-1.mylabs.dev/<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>
+and you should see the &quot;We really love socks!&quot;:</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">curl</span> <span class="token parameter variable">-sk</span> https://front-end.jx-ruzickap-front-end-pr-1.mylabs.dev/ <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">&quot;love socks&quot;</span>
+</code></pre></div><p>Output:</p> <div class="language-html extra-class"><pre class="language-html"><code>                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>#<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>We really love socks!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>Here is the screenshot:</p> <p><img src="/k8s-jenkins-x/assets/img/PR.29be64eb.png" alt="PR" title="PR"></p> <h2 id="merge"><a href="#merge" class="header-anchor">#</a> Merge</h2> <p>Let's merge the PR to the <code>master</code>:</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">git</span> checkout master
+<span class="token function">git</span> merge my_change --no-ff <span class="token parameter variable">-m</span> <span class="token string">&quot;Merge pull request #1 from ruzickap&quot;</span>
+<span class="token function">git</span> push
+</code></pre></div><p>Output:</p> <div class="language-text extra-class"><pre class="language-text"><code>Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+Merge made by the 'recursive' strategy.
+ public/index.html | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Enumerating objects: 1, done.
+Counting objects: 100% (1/1), done.
+Writing objects: 100% (1/1), 233 bytes | 233.00 KiB/s, done.
+Total 1 (delta 0), reused 0 (delta 0)
+To https://github.com/ruzickap/front-end.git
+   6bb2945..d88a84b  master -&gt; master
+</code></pre></div><p>This will trigger another build:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>jx get build logs <span class="token parameter variable">--wait</span><span class="token operator">=</span>true <span class="token string">&quot;ruzickap/front-end/master #2 release&quot;</span>
+<span class="token function">sleep</span> <span class="token number">10</span>
+</code></pre></div><p>Output:</p> <div class="language-text extra-class"><pre class="language-text"><code>Build logs for ruzickap/front-end/master #2 release
+...
+Pull Request https://github.com/ruzickap/environment-mylabs-staging/pull/2 is merged at sha cfe0935b9f327923a37d3f46fd9433559e2b3144
+Pull Request merged but we are not waiting for the update pipeline to complete!
+</code></pre></div><p>Check if the staging was changed after successful merge <a href="http://front-end.jx-staging.mylabs.dev" target="_blank" rel="noopener noreferrer">http://front-end.jx-staging.mylabs.dev<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>
+and you should see the &quot;We really love socks!&quot;.</p> <p>The production should not be affected by the PR merge.</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">curl</span> <span class="token parameter variable">-sk</span> http://front-end.jx-staging.mylabs.dev <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">&quot;love socks&quot;</span>
+</code></pre></div><p>Output:</p> <div class="language-html extra-class"><pre class="language-html"><code>                            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h3</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">&quot;</span>#<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>We really love socks!<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h3</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>You should see the change by opening <a href="http://front-end.jx-staging.mylabs.dev" target="_blank" rel="noopener noreferrer">http://front-end.jx-staging.mylabs.dev<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>jx promote front-end <span class="token parameter variable">--build</span><span class="token operator">=</span><span class="token string">&quot;2&quot;</span> <span class="token parameter variable">--version</span> <span class="token number">0.3</span>.14 <span class="token parameter variable">--env</span> production --batch-mode<span class="token operator">=</span>true
+</code></pre></div><p>Output:</p> <div class="language-text extra-class"><pre class="language-text"><code>WARNING: prow based install so skip waiting for the merge of Pull Requests to go green as currently there is an issue with gettingstatuses from the PR, see https://github.com/jenkins-x/jx/issues/2410
+Promoting app front-end version 0.3.14 to namespace jx-production
+Created Pull Request: https://github.com/ruzickap/environment-mylabs-production/pull/2
+WARNING: failed to parse git provider URL git@github.com:ruzickap/k8s-jenkins-x.git: parse git@github.com:ruzickap/k8s-jenkins-x.git: first path segment in URL cannot contain colon
+Pull Request https://github.com/ruzickap/environment-mylabs-production/pull/2 is merged at sha efbb7115c326151b691849561453d57f2e46f4b2
+Pull Request merged but we are not waiting for the update pipeline to complete!
+</code></pre></div><p>The promotion to production should be completed soon:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>jx get activity
+<span class="token function">sleep</span> <span class="token number">60</span>
+</code></pre></div><p>Output:</p> <div class="language-text extra-class"><pre class="language-text"><code>...
+ruzickap/k8s-jenkins-x/master #1                                          Running Version: 0.3.13
+  Release                                                 13m18s     1m0s Succeeded
+  Promote: production                                     12m18s     1m7s Succeeded
+    PullRequest                                           12m18s     1m7s Succeeded  PullRequest: https://github.com/ruzickap/environment-mylabs-production/pull/1 Merge SHA: b84c82ec3faf8536409aca200c2067281ccdb745
+    Update                                                11m11s       0s Succeeded
+ruzickap/k8s-jenkins-x/master #2                                          Running Version: 0.3.14
+  Release                                                  2m27s     1m0s Succeeded
+  Promote: production                                      1m27s     1m7s Succeeded
+    PullRequest                                            1m27s     1m7s Succeeded  PullRequest: https://github.com/ruzickap/environment-mylabs-production/pull/2 Merge SHA: efbb7115c326151b691849561453d57f2e46f4b2
+    Update                                                   20s       0s Succeeded
+    Promoted                                                 20s       0s Succeeded  Application is at: http://front-end.jx-production.mylabs.dev
+</code></pre></div><p>You should see the &quot;production change&quot; by opening <a href="http://front-end.jx-production.mylabs.dev" target="_blank" rel="noopener noreferrer">http://front-end.jx-production.mylabs.dev<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>.</p> <p>Here is how the AWS ECR looks like at the end:</p> <p><img src="/k8s-jenkins-x/assets/img/AWS_ECR.e26cc2a8.png" alt="AWS ECR" title="AWS ECR"></p></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/ruzickap/k8s-jenkins-x/edit/master/docs/part-03/README.md" target="_blank" rel="noopener noreferrer">Edit this page</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">6/30/2024, 4:11:13 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/k8s-jenkins-x/part-02/" class="prev">
+        Sock Shop
+      </a></span> <span class="next"><a href="/k8s-jenkins-x/part-04/">
+        Clean-up
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/k8s-jenkins-x/assets/js/app.aeee065c.js" defer></script><script src="/k8s-jenkins-x/assets/js/2.2d743907.js" defer></script><script src="/k8s-jenkins-x/assets/js/1.2b74d1c9.js" defer></script><script src="/k8s-jenkins-x/assets/js/22.d813267d.js" defer></script>
+  </body>
+</html>
